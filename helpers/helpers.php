@@ -72,15 +72,13 @@ function image_embed_codes($images, $type = null)
         $thumb_url = asset_cdn('t/' . $image->hash . '.' . $image->image_extension);
         $image_url = asset_cdn('i/' . $image->hash . '.' . $image->image_extension);
         if ($type == 'html') {
-            $embed .= '<a href="' . $image_url . '"><img src="' . $thumb_url . '"' . "></a>\n";
+            $embed .= '<a href="' . $image_url . '"><img src="' . $thumb_url . '"' . "></a>;
         } elseif ($type == 'bbcode') {
-            $embed .= '[img]' . $image_url . "[/img]\n";
+            $embed .= '[img]' . $image_url . "[/img];
         } else {
             $embed .= $image_url . "\n";
         }
     }
-
-    $embed = rtrim($embed, "\n");
 
     return $embed;
 }
